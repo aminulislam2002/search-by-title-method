@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .card {
+        margin: 20px;
+        padding: 20px;
+        width: 300px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+      }
+
+      .card-title {
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .card-description {
+        margin: 10px 0 0;
+        font-size: 16px;
+      }
+      .search-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      input {
+        width: 50%;
+        height: 30px;
+      }
+      button {
+        padding: 8px;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search by title" />
+        <button type="button" onclick="searchCards()">Search</button>
+      </div>
+
+      <div class="cards-container">
+        <div class="card">
+          <h2 class="card-title">Blue T-Shirt</h2>
+          <p class="card-description">This is a comfortable blue t-shirt.</p>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Red Hoodie</h2>
+          <p class="card-description">This is a warm red hoodie.</p>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Black Jeans</h2>
+          <p class="card-description">These are stylish black jeans.</p>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">White Sneakers</h2>
+          <p class="card-description">These are comfortable white sneakers.</p>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Gray Backpack</h2>
+          <p class="card-description">This is a spacious gray backpack.</p>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Blue T-Shirt</h2>
+          <p class="card-description">This is a comfortable blue t-shirt.</p>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Red Hoodie</h2>
+          <p class="card-description">This is a warm red hoodie.</p>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Brown Belt</h2>
+          <p class="card-description">This is a stylish brown belt.</p>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Black Jeans</h2>
+          <p class="card-description">These are stylish black jeans.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      function searchCards() {
+        let input = document.getElementById("search-input").value.toUpperCase();
+        let cards = document.getElementsByClassName("card");
+
+        for (let i = 0; i < cards.length; i++) {
+          let title = cards[i].getElementsByClassName("card-title")[0].innerText.toUpperCase();
+          if (title.indexOf(input) !== -1) {
+            cards[i].style.display = "";
+          } else {
+            cards[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
